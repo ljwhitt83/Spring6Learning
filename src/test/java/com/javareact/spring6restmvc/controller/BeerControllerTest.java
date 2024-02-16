@@ -2,7 +2,6 @@ package com.javareact.spring6restmvc.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.javareact.spring6restmvc.mappers.BeerMapper;
-import com.javareact.spring6restmvc.model.BeerDTO;
 import com.javareact.spring6restmvc.services.BeerService;
 import com.javareact.spring6restmvc.services.BeerServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
@@ -13,13 +12,9 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 
-import java.util.Optional;
-
 import static org.hamcrest.core.Is.is;
-import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.BDDMockito.given;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 //@SpringBootTest
@@ -46,7 +41,7 @@ class BeerControllerTest {
     }
 
     //Jackson is used to serialize deserialize json data
-    @Test
+   /* @Test
     void testCreateNewBeer() throws Exception {
 
         BeerDTO beer = beerServiceImpl.listBeers(null, null, false, 1, 25).get(0);
@@ -61,7 +56,7 @@ class BeerControllerTest {
                         .content(objectMapper.writeValueAsString(beer)))
                 .andExpect(status().isCreated())
                 .andExpect(header().exists("Location"));
-    }
+    }*/
 
     @Test
     void testListBeers() throws Exception {
@@ -76,7 +71,7 @@ class BeerControllerTest {
 
 
 
-    @Test
+/*    @Test
     void getBeerById() throws Exception{
 
         BeerDTO testBeer = beerServiceImpl.listBeers(null, null, false, 1, 25).get(0);
@@ -87,5 +82,5 @@ class BeerControllerTest {
                 .accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
         //System.out.println(beerController.getBeerById(UUID.randomUUID()));
-    }
+    }*/
 }

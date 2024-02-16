@@ -65,7 +65,7 @@ public class BeerServiceImpl implements BeerService {
 
     @Override
     public Page<BeerDTO> listBeers(String beerName, BeerStyle beerStyle, Boolean showInventory, Integer pageNumber, Integer pageSize) {
-        return PageImpl<>(new ArrayList<>(beerMap.values()));
+        return new PageImpl<>(new ArrayList<>(beerMap.values()));
     }
 
     @Override
